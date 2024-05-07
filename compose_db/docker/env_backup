@@ -1,0 +1,2 @@
+DATABASE_URL=postgresql://aamir122:my-password@PostgresCont:5432/mydatabase
+TEST_DATABASE_URL=postgresql://aamirlucky60:AhJX4ZpVc8mS@ep-weathered-base-a51yuvs0.us-east-2.aws.neon.tech/todoAPP?sslmode=require

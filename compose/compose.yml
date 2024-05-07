@@ -1,0 +1,10 @@
+version : "1.0.0"
+name : "fastapi"
+services : 
+  api :
+    build :
+      context : ./docker
+      dockerfile : Dockerfile.dev
+    ports:
+      - "8000:8000"    
+    

@@ -1,0 +1,36 @@
+version: "1.0.0"
+
+name: "fastapi"
+
+services:
+  api:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.dev
+    depends_on:
+        - postgres_db
+    ports:
+      - "8000:8000"  
+    networks:
+      - my-api-net
+  postgres_db:
+    image: postgres:latest  
+    restart: always
+    container_name: PostgresCont
+    environment:
+        - POSTGRES_USER=aamir122
+        - POSTGRES_PASSWORD=my-password
+        - POSTGRES_DB=mydatabase
+    ports:
+        - '5433:5432'
+    volumes:
+        - postgres_db:/var/lib/postgresql/data
+    networks:
+      - my-api-net
+
+volumes:
+  postgres_db:
+    driver: local
+
+networks:
+  my-api-net:  
